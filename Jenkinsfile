@@ -14,7 +14,7 @@ pipeline {
             steps {
                 echo 'Deploying-to-dev'
                 powershell 'pm2 start python-greetings/app.py --name greetings-app-Deploying-to-dev'
-                powershell 'pm2 delete greetings-app-Deploying-to-dev "&" set "errorlevel=0"'
+                powershell 'pm2 delete greetings-app-Deploying-to-dev'
             }
         }
       stage('tests-on-dev') {
