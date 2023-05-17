@@ -13,6 +13,7 @@ pipeline {
       stage('deploy-to-dev') {
             steps {
                 echo 'Deploying to dev'
+                powershell 'rm -rf python-greetings'
                 powershell 'git clone https://github.com/mtararujs/python-greetings'
                 powershell 'pm2 delete greetings-app-install-pip-deps & set "errorlevel=0"'
             }
