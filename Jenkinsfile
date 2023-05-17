@@ -5,7 +5,7 @@ pipeline {
         stage('install-pip-deps') {
             steps {
                 echo 'Installing all required depdendencies..'
-                powershell 'git clone https://github.com/mtararujs/python-greetings'
+                powershell 'git.exe clone https://github.com/mtararujs/python-greetings'
                 powershell 'dir python-greetings'
                 powershell 'pip install -r python-greetings/requirements.txt'
             }
