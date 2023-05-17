@@ -14,7 +14,7 @@ pipeline {
       stage('deploy-to-dev') {
             steps {
                 echo 'Deploying-to-dev'
-                powershell 'pm2 start python-greetings/app.py --name greetings-app-dep-dev -- --p 7001'
+                powershell 'pm2 start python-greetings/app.py --name greetings-app-dep-dev -p 7001'
                 powershell 'pm2 delete all'
                 powershell 'npm install'
                 powershell 'npm run --prefix course-js-api-framework greetings greetings_dev'
