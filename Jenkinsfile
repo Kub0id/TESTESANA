@@ -13,7 +13,7 @@ pipeline {
       stage('deploy-to-dev') {
             steps {
                 echo 'Deploying-to-dev'
-                bat 'pm2 delete greetings-app-Deploying-to-dev & EXIT /B 0)'
+                cmd 'pm2 delete greetings-app-Deploying-to-dev & EXIT /B 0)'
             }
         }
       stage('tests-on-dev') {
