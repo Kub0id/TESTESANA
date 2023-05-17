@@ -16,7 +16,7 @@ pipeline {
                 echo 'Deploying-to-dev'
                 powershell 'pm2 start python-greetings/app.py --name greetings-app-dep-dev -p 7001'
                 powershell 'pm2 delete all'
-                powershell 'npm install course-js-api-framework'
+                powershell 'npm install ".\course-js-api-framework\"'
                 powershell 'npm run --prefix course-js-api-framework greetings greetings_dev'
             }
         }
