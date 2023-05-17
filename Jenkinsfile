@@ -4,37 +4,37 @@ pipeline {
     stages {
         stage('install-pip-deps') {
             steps {
-                echo 'Hello World'
+                echo 'Installing all required depdendencies..'
             }
         }
       stage('deploy-to-dev') {
             steps {
-                echo 'Hello World'
+                echo 'Deploying to dev'
             }
         }
       stage('tests-on-dev') {
             steps {
-                echo 'Hello World'
+                echo 'Testing on developments'
             }
         }
       stage('deploy-to-staging') {
             steps {
-                echo 'Hello World'
+                echo 'Das ist staging grounds'
             }
         }
       stage('tests-on-preprod') {
             steps {
-                echo 'Hello World'
+                echo 'Preproduction on testing'
             }
         }
       stage('deploy-to-prod') {
             steps {
-                echo 'Hello World'
+                echo 'Deploying to productions'
             }
         }
       stage('tests-on-prod') {
             steps {
-                echo 'Hello World'
+                echo 'Testing FINAL production'
             }
         }
     }
