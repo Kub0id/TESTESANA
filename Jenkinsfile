@@ -24,7 +24,14 @@ pipeline {
                 powershell 'pm2 delete all'
             }
         }
-      stage('deploy-to-staging') {
+        stage('tests-on-staging') {
+            steps {
+                echo 'Testing-on-staging'
+                powershell 'pm2 start python-greetings/app.py --name greetings-app-test-dev-on-stg -p 7002'
+                powershell 'pm2 delete all'
+            }
+        }
+      stage('deploy-to-preprod') {
             steps {
                 echo 'Das-ist-staging-grounds'
                 powershell 'pm2 start python-greetings/app.py --name greetings-app-staging-dep -p 7002'
