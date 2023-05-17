@@ -12,37 +12,37 @@ pipeline {
         }
       stage('deploy-to-dev') {
             steps {
-                echo 'Deploying to dev'
-                powershell 'pm2 delete greetings-app-install-pip-deps & set "errorlevel=0"'
+                echo 'Deploying-to-dev'
+                powershell ' pm2 delete greetings-app-Deploying-to-dev & EXIT /B 0)'
             }
         }
       stage('tests-on-dev') {
             steps {
-                echo 'Testing on developments'
+                echo 'Testing-on-developments'
      
             }
         }
       stage('deploy-to-staging') {
             steps {
-                echo 'Das ist staging grounds'
+                echo 'Das-ist-staging-grounds'
               
             }
         }
       stage('tests-on-preprod') {
             steps {
-                echo 'Preproduction on testing'
+                echo 'Preproduction-on-testing'
                
             }
         }
       stage('deploy-to-prod') {
             steps {
-                echo 'Deploying to productions'
+                echo 'Deploying-to-productions'
               
             }
         }
       stage('tests-on-prod') {
             steps {
-                echo 'Testing FINAL production'
+                echo 'Testing-FINAL-production'
                
             }
         }
