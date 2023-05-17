@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Installing all required depdendencies..'
                 powershell 'git clone https://github.com/mtararujs/python-greetings'
-                powershell 'dir python-greetings\'
+                powershell 'dir python-greetings'
                 powershell 'pip install -r python-greetings/requirements.txt'
             }
         }
