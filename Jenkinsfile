@@ -13,38 +13,37 @@ pipeline {
       stage('deploy-to-dev') {
             steps {
                 echo 'Deploying to dev'
-                powershell 'rm -rf python-greetings'
                 powershell 'pm2 delete greetings-app-install-pip-deps & set "errorlevel=0"'
             }
         }
       stage('tests-on-dev') {
             steps {
                 echo 'Testing on developments'
-                powershell 'pm2 delete greetings-app-install-pip-deps & set "errorlevel=0"'
+     
             }
         }
       stage('deploy-to-staging') {
             steps {
                 echo 'Das ist staging grounds'
-                powershell 'pm2 delete greetings-app-install-pip-deps & set "errorlevel=0"'
+              
             }
         }
       stage('tests-on-preprod') {
             steps {
                 echo 'Preproduction on testing'
-                powershell 'pm2 delete greetings-app-install-pip-deps & set "errorlevel=0"'
+               
             }
         }
       stage('deploy-to-prod') {
             steps {
                 echo 'Deploying to productions'
-                powershell 'pm2 delete greetings-app-install-pip-deps & set "errorlevel=0"'
+              
             }
         }
       stage('tests-on-prod') {
             steps {
                 echo 'Testing FINAL production'
-                powershell 'pm2 delete greetings-app-install-pip-deps & set "errorlevel=0"'
+               
             }
         }
     }
