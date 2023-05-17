@@ -16,24 +16,20 @@ pipeline {
                 echo 'Deploying-to-dev'
                 powershell 'pm2 start python-greetings/app.py --name greetings-app-dep-dev -p 7001'
                 powershell 'pm2 delete all'
-                powershell 'npm install'
-                powershell 'npm run --prefix course-js-api-framework greetings greetings_dev'
             }
         }
       stage('tests-on-dev') {
             steps {
                 echo 'Testing-on-developments'
-                powershell 'pm2 start python-greetings/app.py --name greetings-app-test-dev -p 7001'
-                powershell 'pm2 delete all'
+                powershell 'npm install'
                 powershell 'npm run --prefix course-js-api-framework greetings greetings_dev'
             }
         }
         stage('tests-on-staging') {
             steps {
                 echo 'Testing-on-staging'
-                powershell 'pm2 start python-greetings/app.py --name greetings-app-test-dev-on-stg -p 7002'
-                powershell 'pm2 delete all'
-                powershell 'npm run --prefix course-js-api-framework greetings greetings_staging'
+                powershell 'npm install'
+                powershell 'npm run --prefix course-js-api-framework greetings greetings_dev'
             }
         }
       stage('deploy-to-preprod') {
@@ -41,15 +37,13 @@ pipeline {
                 echo 'Das-ist-staging-grounds'
                 powershell 'pm2 start python-greetings/app.py --name greetings-app-staging-dep -p 7002'
                 powershell 'pm2 delete all'
-                powershell 'npm run --prefix course-js-api-framework greetings greetings_staging'
             }
         }
       stage('tests-on-preprod') {
             steps {
                 echo 'Preproduction-on-testing'
-                powershell 'pm2 start python-greetings/app.py --name greetings-app-test-preprod -p 7003'
-                powershell 'pm2 delete all'
-                powershell 'npm run --prefix course-js-api-framework greetings greetings_preprod'
+                powershell 'npm install'
+                powershell 'npm run --prefix course-js-api-framework greetings greetings_dev'
             }
         }
       stage('deploy-to-prod') {
@@ -57,15 +51,13 @@ pipeline {
                 echo 'Deploying-to-productions'
                 powershell 'pm2 start python-greetings/app.py --name greetings-app-dep-prod -p 7004'
                 powershell 'pm2 delete all'
-                powershell 'npm run --prefix course-js-api-framework greetings greetings_prod'
             }
         }
       stage('tests-on-prod') {
             steps {
                 echo 'Testing-FINAL-production'
-                powershell 'pm2 start python-greetings/app.py --name greetings-test-prod -p 7004'
-                powershell 'pm2 delete all'
-                powershell 'npm run --prefix course-js-api-framework greetings greetings_prod'
+                powershell 'npm install'
+                powershell 'npm run --prefix course-js-api-framework greetings greetings_dev'
             }
         }
     }
